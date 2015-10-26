@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <output type hidden="" id="list"></output>
+    <meta charset="utf-8"/>
+    <title>Image Processing</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<header>
+    <h2>Web Image Processing</h2>
+    <h4>Platform : HTML5 + CSS3 + JavaScript </h4>
+</header>
+
+<section id="nav-bar">
+    <nav class="navbar navbar-dark">
+        <ul class="nav nav-tabs">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">화소점처리</a>
+                <div class="dropdown-menu">
+                    <a class="nav-link" href="javascript:show();">이미지보기</a>
+                    <a class="nav-link" href="javascript:negative();">반전</a>
+                    <a class="nav-link" href="javascript:GrayScale();">GrayScale</a>
+                    <a class="nav-link" href="javascript:bright();">밝게</a>
+                    <a class="nav-link" href="javascript:Subtract();">어둡게</a>
+                    <a class="nav-link" href="javascript:Multiply();">영상곱셈</a>
+                    <a class="nav-link" href="javascript:Division();">영상나눗셈</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">영상 논리연산</a>
+                <div class="dropdown-menu">
+                    <a class="nav-link" href="javascript:ANDOperate();">AND</a>
+                    <a class="nav-link" href="javascript:OROperate();">OR</a>
+                    <a class="nav-link" href="javascript:XOROperate();">Xor</a>
+                    <a class="nav-link" href="javascript:GammaCorrection();">감마보정</a>
+                    <a class="nav-link" href="javascript:Binarization();">이진화</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">부가 기능#1</a>
+                <div class="dropdown-menu">
+                    <a class="nav-link" href="javascript:Noise();">노이즈 생성</a>
+                    <a class="nav-link" href="javascript:EndIn();">EndIn</a>
+                    <a class="nav-link" href="javascript:Sepia();">Sepia</a>
+                    <a class="nav-link" href="javascript:FlipHorizontal();">FlipHorizontal</a>
+                    <a class="nav-link" href="javascript:HDR();">HDR</a>
+                    <a class="nav-link" href="javascript:Embossing1();">Embossing</a>
+                    <a class="nav-link" href="javascript:fileinfo();">파일정보확인</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">부가 기능#2</a>
+                <div class="dropdown-menu">
+                    <a class="nav-link" href="javascript:Mosaic();">모자이크</a>
+                    <a class="nav-link" href="javascript:MoreR();">Red 값</a>
+                    <a class="nav-link" href="javascript:MoreB();">Blue 값</a>
+                    <a class="nav-link" href="javascript:MoreG();">Green 값</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</section>
+
+<section id="content" class="container-fluid">
+    <div class="canvas-content row col-lg-12">
+        <canvas id="myCanvas" class="col-lg-12" onMousedown="drawStart();" onMouseMove="drawMove();" onMouseUP="drawEnd()"; ></canvas>
+    </div>
+    <input type="button" name="btnSave" id="btnSave" value="이미지로 변환" onClick="toDataURL();" />
+    <input type="button" name="btnClear" id="btnClear" value="새 캔버스" onclick="reload()" />
+    <img id="theImage" />
+</section>
+<input type="file" id="files" name="files[]" multiple  />
+
+</body>
+
+<script type="text/javascript" src="js/main.js"></script>
+</html>
